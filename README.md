@@ -52,7 +52,9 @@ Clone the Repository from GitHub. Then do the following steps:
 # Some Project Screenshots :
 
 # A) For Computer Screen:
-
-
+![Screenshot (309)](https://github.com/Pushpendra-1697/User_management_system/assets/104748364/eff31d9c-ea59-49ed-be10-89804751a284)
+![Screenshot (310)](https://github.com/Pushpendra-1697/User_management_system/assets/104748364/d201d5aa-a3cc-4492-b9e0-8c0613fb6fc2)
+![Screenshot (311)](https://github.com/Pushpendra-1697/User_management_system/assets/104748364/d954a638-9476-4c1a-9b54-d3cd1de3a3e4)
 
 # B) For Mobile/Tablet Screen :
+![Screenshot (312)](https://github.com/Pushpendra-1697/User_management_system/assets/104748364/6ad4c46d-125f-4b8b-85bd-dd26ab6b696f)
