@@ -4,9 +4,9 @@ const contactRouter = Router();
 
 // end point: /contact/post --> For create a new contact;
 contactRouter.post('/post', async (req, res) => {
-    const { name, address, phone } = req.body;
+    const { name, address, phone, email } = req.body;
     const { user_id } = req.headers;
-    let payload = { name, address, phone, admin_id: user_id };
+    let payload = { name, address, phone, email, admin_id: user_id };
     try {
         const contact = new ContactModel(payload);
         await contact.save();
@@ -15,6 +15,7 @@ contactRouter.post('/post', async (req, res) => {
         res.status(404).send({ Error: err.message });
     }
 });
+
 
 //end point: /contact/get --> For get All contacts of particulat admin;
 contactRouter.get('/get', async (req, res) => {
@@ -43,6 +44,16 @@ contactRouter.get('/get', async (req, res) => {
     }
 });
 
+
+contactRouter.get('/single/:id', async (req,res) => {
+    const { id } = req.params;
+    try {
+        const contact = await ContactModel.findOne({ _id: id });
+        res.status(200).send({ "msg": `Successfully get Contact which id is ${id}`, contact });
+    } catch (err) {
+        res.status(404).send({ Error: err.message });
+    }
+});
 
 // end point: /contact/patch/:id --> For update contact details;
 contactRouter.patch('/patch/:id', async (req, res) => {

@@ -1,11 +1,12 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr, Button, useDisclosure, ModalFooter, Stack, FormLabel, FormControl, Input, Box, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Modal, Flex, useColorModeValue } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { AiFillDelete, AiOutlineEdit } from 'react-icons/ai';
+import { AiFillDelete, AiOutlineEdit, AiOutlineMail, AiFillEye } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { deleteContact, updateContact } from '../redux/Contact/contact.action';
 import { AiOutlineUserAdd, AiOutlinePhone } from 'react-icons/ai';
 import {FcAddressBook} from 'react-icons/fc';
 import { Icon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
 const DetailsList = ({ contacts }) => {
     const [id, setID] = useState("");
@@ -13,7 +14,8 @@ const DetailsList = ({ contacts }) => {
     const [state, setState] = useState({
         name: "",
         phone: "",
-        address: ""
+        address: "",
+        email: ''
     });
     const dispatch = useDispatch();
 
@@ -33,10 +35,10 @@ const DetailsList = ({ contacts }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(updateContact(id, state));
-        setState({ name: "", phone: "", address: "" });
+        setState({ name: "", phone: "", address: "", email: '' });
     };
 
-    const { name, address, phone } = state;
+    const { name, address, phone, email } = state;
     return (
         <>
             <TableContainer mt={["15%", "15%", "0%"]}>
@@ -45,9 +47,11 @@ const DetailsList = ({ contacts }) => {
                         <Tr>
                             <Th>Name <Icon fontSize={'23px'} as={AiOutlineUserAdd} /></Th>
                             <Th>Address <Icon fontSize={'23px'} as={FcAddressBook} /></Th>
+                            <Th>Email <Icon fontSize={'23px'} as={AiOutlineMail} /></Th>
                             <Th>Phone No. <Icon fontSize={'23px'} as={AiOutlinePhone} /></Th>
                             <Th>CreatedAt</Th>
                             <Th>UpdatedAt</Th>
+                            <Th>View</Th>
                             <Th>Edit</Th>
                             <Th>Delete</Th>
                         </Tr>
@@ -57,9 +61,11 @@ const DetailsList = ({ contacts }) => {
                             <Tr key={ele._id}>
                                 <Td>{ele.name}</Td>
                                 <Td>{ele.address}</Td>
+                                <Td>{ele.email}</Td>
                                 <Td>{ele.phone}</Td>
                                 <Td>{ele.createdAt}</Td>
                                 <Td>{ele.updatedAt}</Td>
+                                <Td><Link to={`/contact/${ele._id}`}><AiFillEye fontSize={"23px"} /></Link></Td>
                                 <Td><Button variant={"outline"} color={"green"} onClick={() => handleUpdate(ele._id)}><AiOutlineEdit /></Button></Td>
                                 <Td><Button variant={"outline"} color={"red"} onClick={() => handleRemove(ele._id)}><AiFillDelete /></Button></Td>
                             </Tr>
@@ -105,6 +111,17 @@ const DetailsList = ({ contacts }) => {
                                                         name="address"
                                                         placeholder="Address"
                                                         type="text"
+                                                        onChange={handleChange}
+                                                    />
+                                                </FormControl>
+
+                                                <FormControl id="email">
+                                                    <FormLabel>Email</FormLabel>
+                                                    <Input
+                                                        value={email}
+                                                        name="email"
+                                                        placeholder="Email"
+                                                        type="email"
                                                         onChange={handleChange}
                                                     />
                                                 </FormControl>

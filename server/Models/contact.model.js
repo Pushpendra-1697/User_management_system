@@ -5,6 +5,7 @@ const contactSchema = new Schema(
     {
         name: { type: String },
         address: { type: String },
+        email: { type: String },
         phone: Number,
         admin_id: {
             type: Schema.Types.String, ref: "user", required: true

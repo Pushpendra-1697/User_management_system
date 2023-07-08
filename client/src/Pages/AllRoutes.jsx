@@ -5,6 +5,7 @@ import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
 import ContactDetails from './ContactDetails';
+import SingleContact from './SingleContact';
 
 
 const AllRoutes = () => {
@@ -15,6 +16,7 @@ const AllRoutes = () => {
                 <Route path='/register' element={<Signup />}></Route>
                 <Route path='/login' element={<Login />}></Route>
                 <Route path='/contact' element={<ContactDetails />}></Route>
+                <Route path='/contact/:contact_id' element={<SingleContact />}></Route>
             </Routes>
         </Box>
     );
