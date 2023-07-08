@@ -5,27 +5,27 @@ This application for contact-listing applications can help users stay organized 
 
 # Frontend Verecel Deployed Link :
 
-https://contact-list-orpin.vercel.app
+https://usermanager-eight.vercel.app/
 
-# Backend Cyclic Deployed Link:
+# Backend Render Deployed Link:
 
-https://contact-wh3n.onrender.com
+https://usermanager-o6ya.onrender.com/
 
 # Tech Stack :
 
 # A) Frontend :
 
-React (JSX Syntax), Redux, Chakra-ui Library for Styling & Modal, axios for handling asynchrous request, react-router-dom for routing or Navigate from one page to another, Standard react components, React-hooks, chakra-icons & react-icons.
+React (JSX Syntax), Redux, Chakra-ui Library for Styling & Modal, Axios for handling asynchronous requests, react-router-dom for routing or Navigate from one page to another, Standard react components, React-hooks, chakra-icons & react-icons.
 
 # B) Backend :
 
-Node.js, Express.js, mongodb (NoSQL), mongoose for connect database to server, cors for handling the cors error, relationships between collections, BSON and Bsondump.
+Node.js, Express.js, MongoDB (NoSQL), mongoose for connecting the database to the server, cors for handling the Cors error, relationships between collections, BSON, and Bsondump.
 
 # Some instructions to run locally :
 
 ## Installation
 
-Clone the Repository from Github. Then do the following steps:
+Clone the Repository from GitHub. Then do the following steps:
 
 ```bash
     npm install
