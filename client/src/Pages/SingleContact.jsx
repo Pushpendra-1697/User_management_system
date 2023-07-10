@@ -37,7 +37,7 @@ const SingleContact = () => {
                 </Alert>
             </Box>}
 
-            <Img borderRadius={'50%'} h={'150px'} src={data.profile} alt='Profile' />
+            <Img borderRadius={'50%'} w='150px' h={'150px'} src={data.profile} alt='Profile' />
             <Text>ID: {data._id}</Text>
             <Text>Name: {data.name}</Text>
             <Text>Email: {data.email}</Text>

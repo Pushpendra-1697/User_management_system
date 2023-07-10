@@ -61,7 +61,7 @@ const DetailsList = ({ contacts }) => {
                     <Tbody>
                         {contacts && contacts.map((ele, index) =>
                             <Tr key={ele._id}>
-                                <Td><Img borderRadius={'50%'} h={'80px'} src={ele.profile} alt='Profile' /></Td>
+                                <Td><Img borderRadius={'50%'} h={'80px'} w='80px' src={ele.profile} alt='Profile' /></Td>
                                 <Td>{ele.name}</Td>
                                 <Td>{ele.address}</Td>
                                 <Td>{ele.email}</Td>
