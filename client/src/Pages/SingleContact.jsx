@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Box, Container, Text } from '@chakra-ui/react'
+import { Alert, AlertIcon, Box, Container, Img, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { backend_url } from './BackendURL';
@@ -37,6 +37,7 @@ const SingleContact = () => {
                 </Alert>
             </Box>}
 
+            <Img borderRadius={'50%'} h={'150px'} src={data.profile} alt='Profile' />
             <Text>ID: {data._id}</Text>
             <Text>Name: {data.name}</Text>
             <Text>Email: {data.email}</Text>

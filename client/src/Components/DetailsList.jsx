@@ -1,4 +1,4 @@
-import { Table, TableContainer, Tbody, Td, Th, Thead, Tr, Button, useDisclosure, ModalFooter, Stack, FormLabel, FormControl, Input, Box, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Modal, Flex, useColorModeValue } from '@chakra-ui/react';
+import { Table, TableContainer, Tbody, Td, Th, Thead, Tr, Button, useDisclosure, ModalFooter, Stack, FormLabel, FormControl, Input, Box, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Modal, Flex, useColorModeValue, Img } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { AiFillDelete, AiOutlineEdit, AiOutlineMail, AiFillEye } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
@@ -7,6 +7,7 @@ import { AiOutlineUserAdd, AiOutlinePhone } from 'react-icons/ai';
 import {FcAddressBook} from 'react-icons/fc';
 import { Icon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
+import {CgProfile} from 'react-icons/cg';
 
 const DetailsList = ({ contacts }) => {
     const [id, setID] = useState("");
@@ -45,6 +46,7 @@ const DetailsList = ({ contacts }) => {
                 <Table size='sm' variant={"striped"}>
                     <Thead>
                         <Tr>
+                            <Th>Profile <Icon fontSize={'23px'} as={CgProfile} /></Th>
                             <Th>Name <Icon fontSize={'23px'} as={AiOutlineUserAdd} /></Th>
                             <Th>Address <Icon fontSize={'23px'} as={FcAddressBook} /></Th>
                             <Th>Email <Icon fontSize={'23px'} as={AiOutlineMail} /></Th>
@@ -59,6 +61,7 @@ const DetailsList = ({ contacts }) => {
                     <Tbody>
                         {contacts && contacts.map((ele, index) =>
                             <Tr key={ele._id}>
+                                <Td><Img borderRadius={'50%'} h={'80px'} src={ele.profile} alt='Profile' /></Td>
                                 <Td>{ele.name}</Td>
                                 <Td>{ele.address}</Td>
                                 <Td>{ele.email}</Td>

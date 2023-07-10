@@ -4,9 +4,9 @@ const contactRouter = Router();
 
 // end point: /contact/post --> For create a new contact;
 contactRouter.post('/post', async (req, res) => {
-    const { name, address, phone, email } = req.body;
+    const { name, address, phone, email, profile } = req.body;
     const { user_id } = req.headers;
-    let payload = { name, address, phone, email, admin_id: user_id };
+    let payload = { name, address, phone, email, profile, admin_id: user_id };
     try {
         const contact = new ContactModel(payload);
         await contact.save();
@@ -44,7 +44,7 @@ contactRouter.get('/get', async (req, res) => {
     }
 });
 
-
+// For get particular user details;
 contactRouter.get('/single/:id', async (req,res) => {
     const { id } = req.params;
     try {
